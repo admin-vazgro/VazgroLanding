@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Manrope:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design Tokens ─── */
+:root {
+  --cream: #FAFAF8;
+  --cream2: #F4F4F1;
+  --cream3: #ECECE8;
+  --ink: #111111;
+  --ink2: #2A2A2A;
+  --muted: #707070;
+  --rule: #E6E6E1;
+  --blue: #1400FF;
+  --blue-lt: #EEEEFF;
+  --warm: #E03D00;
+  --warm-lt: #FFF0EB;
+  --sage: #1A6B54;
+  --sage-lt: #EBF5F1;
+  --gold: #C5A84F;
+  --gold-lt: #FAF5E4;
+  --nav-h: 64px;
+  --type-h1-size: clamp(3.4rem, 5vw, 5.25rem);
+  --type-h1-line: 1.028;
+  --type-h2-size: clamp(2.4rem, 3.9vw, 3.5rem);
+  --type-h2-line: 1.08;
+  --type-h3-size: clamp(1.85rem, 2.6vw, 2.2rem);
+  --type-h3-line: 1.21875;
+  --type-body-size: 1rem;
+  --type-body-line: 1.65;
+}
+
+/* ─── Reset & Base ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Instrument Sans', 'Manrope', 'Bricolage Grotesque', sans-serif;
+  background: #FEFEFE;
+  color: var(--ink);
+  overflow-x: hidden;
+  line-height: 1.45;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream2);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 3px;
+}
+
+/* ─── Typography ─── */
+.serif {
+  font-family: 'Instrument Serif', serif;
+}
+.serif-italic {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+}
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+@layer components {
+  /* ─── Layout ─── */
+  .page-wrap {
+    @apply w-full max-w-[1360px] mx-auto px-5 sm:px-6 lg:px-10 xl:px-12;
+  }
+  .section-pad {
+    @apply py-16 sm:py-20 md:py-24 lg:py-28;
+  }
+
+  /* ─── Buttons — Figma style ─── */
+  .btn {
+    @apply inline-flex items-center gap-2.5 font-semibold cursor-pointer transition-all duration-200 no-underline border-none rounded-lg text-[14px];
+    font-family: 'Instrument Sans', 'Manrope', 'Bricolage Grotesque', sans-serif;
+  }
+  .btn-dark {
+    @apply bg-ink text-cream hover:bg-ink-2 active:scale-[0.98];
+  }
+  .btn-cream {
+    @apply bg-cream text-ink hover:bg-white active:scale-[0.98];
+  }
+  .btn-blue {
+    @apply bg-blue text-white hover:bg-[#0500CC] active:scale-[0.98];
+  }
+  .btn-outline {
+    @apply bg-transparent text-ink border-[1.5px] border-ink hover:bg-ink hover:text-cream;
+  }
+  .btn-ghost-white {
+    @apply bg-transparent text-[rgba(255,255,255,0.65)] border-[1.5px] border-[rgba(255,255,255,0.2)] hover:border-[rgba(255,255,255,0.5)] hover:text-white;
+  }
+  .btn-sm {
+    @apply px-4 py-2.5 text-[13px];
+  }
+  .btn-md {
+    @apply px-6 py-3 text-[14px];
+  }
+  .btn-lg {
+    @apply px-7 sm:px-8 py-3.5 sm:py-4 text-[14px] sm:text-[15px];
+  }
+
+  /* ─── Typography Utils ─── */
+  .eyebrow {
+    @apply text-[10px] sm:text-[11px] font-semibold tracking-[0.14em] uppercase text-muted block mb-3 sm:mb-4;
+  }
+  .type-h1 {
+    font-size: var(--type-h1-size);
+    line-height: var(--type-h1-line);
+    letter-spacing: -0.04em;
+    font-weight: 500;
+    text-wrap: balance;
+  }
+  .type-h2 {
+    font-size: var(--type-h2-size);
+    line-height: var(--type-h2-line);
+    letter-spacing: -0.035em;
+    font-weight: 500;
+    text-wrap: balance;
+  }
+  .type-h3 {
+    font-size: var(--type-h3-size);
+    line-height: var(--type-h3-line);
+    letter-spacing: -0.03em;
+    font-weight: 500;
+    text-wrap: balance;
+  }
+  .type-body {
+    font-size: var(--type-body-size);
+    line-height: var(--type-body-line);
+  }
+  .link-arrow {
+    @apply inline-flex items-center gap-1.5 text-[13px] sm:text-sm font-bold text-ink border-b-[1.5px] border-ink pb-0.5 transition-all duration-200 hover:gap-2.5 hover:opacity-65 bg-transparent cursor-pointer;
+  }
+
+  /* ─── Forms ─── */
+  .input {
+    @apply w-full px-4 py-3 bg-cream-2 border border-rule rounded-lg text-sm text-ink outline-none transition-all focus:border-ink focus:bg-white placeholder:text-muted;
+    font-family: 'Instrument Sans', 'Manrope', 'Bricolage Grotesque', sans-serif;
+  }
+
+  /* ─── Tags ─── */
+  .tag-blue {
+    @apply bg-blue-lt text-blue border border-[rgba(20,0,255,0.15)] text-[11px] font-bold px-2.5 py-0.5 sm:py-1 rounded-full whitespace-nowrap;
+  }
+  .tag-sage {
+    @apply bg-sage-lt text-sage border border-[rgba(26,107,84,0.15)] text-[11px] font-bold px-2.5 py-0.5 sm:py-1 rounded-full whitespace-nowrap;
+  }
+  .tag-warm {
+    @apply bg-warm-lt text-warm border border-[rgba(224,61,0,0.15)] text-[11px] font-bold px-2.5 py-0.5 sm:py-1 rounded-full whitespace-nowrap;
+  }
+  .tag-ink {
+    @apply bg-cream-3 text-ink-2 border border-rule text-[11px] font-bold px-2.5 py-0.5 sm:py-1 rounded-full whitespace-nowrap;
+  }
+
+  /* ─── Cards ─── */
+  .card {
+    @apply bg-white border border-rule rounded-[28px];
+  }
+  .card-hover {
+    @apply hover:border-[#D8D8D2] hover:shadow-[0_18px_48px_rgba(17,17,17,0.06)] transition-all duration-300;
+  }
+
+}
+
+/* ─── Animations ─── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.anim-fade-up {
+  animation: fadeUp 0.6s ease both;
+}
+.float {
+  animation: float 3.5s ease-in-out infinite;
+}
+
+.parallax-layer {
+  transform: translate3d(0, var(--parallax-y, 0px), 0);
+  will-change: transform;
+  transition: transform 140ms linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .parallax-layer {
+    transform: none;
+    transition: none;
+  }
+}
+.float-2 {
+  animation: float 3.5s 0.7s ease-in-out infinite;
+}
+.float-3 {
+  animation: float 3.5s 1.4s ease-in-out infinite;
+}
+
+/* ─── Utilities ─── */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Focus visible for a11y */
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}

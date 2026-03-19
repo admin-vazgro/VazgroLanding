@@ -1,0 +1,45 @@
+# Vazgro — UK Digital Agency
+
+> Vazgro is a London-based digital agency helping UK SMEs and startups launch, grow, and build their digital presence.
+
+## Services
+
+### LAUNCH — Fixed-Fee Packages
+One-off projects at fixed prices with guaranteed delivery timelines.
+- Websites: £149–£999 (3–21 day delivery)
+- Brand identity kits: £299–£599
+- AI chatbot setup: £799
+- AI readiness audit: £499
+- Automation quick-wins: £599
+
+### GROW — Monthly Subscriptions
+Ongoing digital team as a subscription. 3-month minimum, cancel anytime after.
+- Design: £349–£999/month
+- Development: £799–£2,499/month
+- Social media: £399–£1,299/month
+
+### BUILD — Custom Projects
+Custom software, AI products, MVPs, and technical co-founder partnerships.
+- MVP development: £3,999–£8,000
+- AI projects: £5,000–£15,000
+- Custom platforms: £10,000–£25,000+
+- Sprint retainers: £2,500–£8,000/month
+
+## Products
+- **Progrize** (in development): Career platform combining LinkedIn-style networking, Glassdoor-style reviews, and AI-powered CV optimisation.
+- **DashMetric** (planned): White-label analytics dashboard builder.
+- **Briefly AI** (planned): AI-powered proposal and brief generator.
+
+## Contact
+- Website: https://vazgro.com
+- Email: hello@vazgro.com
+- Location: London, United Kingdom
+- Free strategy call: https://vazgro.com/contact
+
+## Key Facts
+- Based in London, UK
+- Serves UK SMEs and startups nationwide
+- Accepts payments via Stripe (UK/EU/US) and Razorpay (India)
+- Average client rating: 4.9/5
+- Average LAUNCH delivery: 7 days
+- Client retention rate: 94%

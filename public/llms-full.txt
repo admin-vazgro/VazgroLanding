@@ -1,0 +1,55 @@
+# Vazgro — Full Service Overview
+
+> Vazgro is a UK digital agency offering web design, branding, AI consulting, monthly design/dev/social subscriptions, and custom product development. Based in London, serving UK SMEs and startups nationwide.
+
+## LAUNCH Packages (Fixed-Fee, One-Off)
+
+### Web & Digital
+- **Landing Page** — £149, 3-day delivery. High-converting single page with form/booking integration.
+- **Starter Site** — £199, 7-day delivery. 5-page brochure website, mobile responsive, basic SEO.
+- **Business Site** — £499, 14-day delivery. Up to 10 pages with CMS, blog, full SEO. Most popular.
+- **E-Commerce Starter** — £999, 21-day delivery. Shopify or WooCommerce, up to 50 products.
+
+### Brand & Design
+- **Brand Starter Kit** — £299, 7-day delivery. Logo (3 concepts), colours, typography, brand guidelines PDF.
+- **Brand Pro Kit** — £599, 10-day delivery. Full brand system including business cards, email signature, social assets.
+
+### AI & Tech
+- **AI Chatbot Setup** — £799, 7-day delivery. Custom chatbot trained on your content, deployed to your website.
+- **AI Readiness Audit** — £499, 5-day delivery. 15–20 page report on AI opportunities in your business.
+- **Automation Quick-Win** — £599, 5-day delivery. One process automated end-to-end using Make, Zapier, or custom code.
+
+## GROW Subscriptions (Monthly)
+
+### Design Track
+- Design Starter: £349/mo — 2 active requests, 48hr turnaround
+- Design Pro: £649/mo — 4 active requests, priority queue, illustrations, UI mockups
+- Design Studio: £999/mo — 6 active requests, 24hr turnaround, video editing
+
+### Dev Track
+- Dev Essentials: £799/mo — ~10 hrs/week, bug fixes, updates
+- Dev Growth: £1,499/mo — ~20 hrs/week, feature development, API integrations
+- Dev Scale: £2,499/mo — ~40 hrs/week dedicated dev, sprint-based delivery
+
+### Social Track
+- Social Starter: £399/mo — 3 platforms, 12 posts/month
+- Social Growth: £799/mo — 4 platforms, 20 posts/month, ad management
+- Social Scale: £1,299/mo — All platforms, unlimited posts, full SEO
+
+All plans include: dedicated PM, unlimited revisions, Slack access, monthly reports. Minimum 3-month commitment.
+
+## BUILD Projects (Custom Scoping)
+- MVP Fast-Track: £3,999–£8,000, 4–8 weeks
+- AI Development: £5,000–£15,000, 3–8 weeks
+- Custom Platform: £10,000–£25,000+, 8–16 weeks
+- Sprint Retainer: £2,500–£8,000/month, ongoing
+- Co-Founder Model: Equity-based technical partnership
+
+## Tech Stack
+Next.js, React, TypeScript, Tailwind CSS, Node.js, Python, Supabase, PostgreSQL, Stripe, Razorpay, OpenAI, Anthropic, LangChain, Vercel, AWS, Docker.
+
+## Case Studies
+1. **Greenfield Law** — +127% enquiry submissions, £499 investment, 12-day delivery
+2. **TalentEdge** — £150k seed raised using MVP, 4-week delivery
+3. **Medi-Flow UK** — 42% admin time reduction with custom AI triage
+4. **NorthStar Retail** — 3× content output, 68% follower growth from GROW subscription

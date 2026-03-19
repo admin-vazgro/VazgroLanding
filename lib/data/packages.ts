@@ -1,0 +1,145 @@
+export interface Package {
+  id: string; name: string; price: number; currency: string;
+  deliveryDays: number; icon: string; category: string;
+  description: string; features: string[]; popular?: boolean;
+  bestFor: string; whatsIncluded: string[];
+  requiresFrom: { label: string; type: 'text'|'file'|'url'|'select'|'textarea'; placeholder?: string; options?: string[]; required: boolean; }[];
+}
+export const packages: Package[] = [
+  {
+    id: 'starter-site', name: 'Starter Site', price: 199, currency: 'GBP', deliveryDays: 7, icon: '🚀',
+    category: 'Web & Digital', description: '5-page brochure website for new businesses',
+    features: ['5-page brochure website','Mobile responsive','Contact form','Basic SEO','WordPress or Webflow'],
+    bestFor: 'New businesses, sole traders, and professionals needing a clean, credible online presence fast.',
+    whatsIncluded: ['Homepage + 4 supporting pages','Custom layout to your brand','Google Analytics 4 setup','Privacy policy & cookie notice','1 round of revisions','Hosting setup guidance'],
+    requiresFrom: [
+      {label:'Your website URL (if existing)',type:'url',placeholder:'https://yoursite.com',required:false},
+      {label:'Brand assets (logo, colours, fonts)',type:'file',required:false},
+      {label:'Pages needed (e.g. Home, About, Services, Contact)',type:'textarea',placeholder:'List the 5 pages you need and brief copy notes for each',required:true},
+      {label:'Tone of voice',type:'select',options:['Professional & formal','Friendly & approachable','Bold & modern','Other — I will describe in notes'],required:true},
+      {label:'Any websites you like the style of',type:'textarea',placeholder:'Paste URLs for design inspiration',required:false},
+      {label:'Additional notes',type:'textarea',placeholder:'Anything else we should know?',required:false},
+    ],
+  },
+  {
+    id: 'business-site', name: 'Business Site', price: 499, currency: 'GBP', deliveryDays: 14, icon: '💼',
+    category: 'Web & Digital', description: 'Up to 10 pages with CMS, blog & full SEO', popular: true,
+    features: ['Up to 10 pages','CMS & blog','Full SEO optimisation','Performance optimised','2 rounds of revisions'],
+    bestFor: 'Growing SMEs and startups needing a full marketing website.',
+    whatsIncluded: ['Up to 10 custom pages','WordPress or Webflow CMS','On-page SEO for all pages','90+ Lighthouse score target','Custom forms with email notifications','Social OG meta tags','2 rounds of revisions + 2 weeks support'],
+    requiresFrom: [
+      {label:'Your website URL (if existing)',type:'url',placeholder:'https://yoursite.com',required:false},
+      {label:'Brand assets (logo, colours, fonts)',type:'file',required:false},
+      {label:'Pages needed',type:'textarea',placeholder:'List up to 10 pages with brief notes on content for each',required:true},
+      {label:'CMS preference',type:'select',options:['WordPress','Webflow','No preference'],required:true},
+      {label:'Tone of voice',type:'select',options:['Professional & formal','Friendly & approachable','Bold & modern','Other'],required:true},
+      {label:'Copy (written content)',type:'select',options:['I will provide all copy','I need copywriting help (additional cost)','Mix — some pages I have copy for'],required:true},
+      {label:'Design inspiration (URLs)',type:'textarea',placeholder:'Websites you like the look of',required:false},
+      {label:'Additional notes',type:'textarea',required:false},
+    ],
+  },
+  {
+    id: 'ecommerce-starter', name: 'E-Commerce Starter', price: 999, currency: 'GBP', deliveryDays: 21, icon: '🛒',
+    category: 'Web & Digital', description: 'Shopify or WooCommerce with up to 50 products',
+    features: ['Shopify or WooCommerce','Up to 50 products loaded','Payment gateway setup','Mobile checkout optimised','Abandoned cart setup'],
+    bestFor: 'Retailers and product businesses launching or migrating their online shop.',
+    whatsIncluded: ['Custom Shopify or WooCommerce theme','Up to 50 products with descriptions, images, variants','Stripe and PayPal integration','Shipping zones and tax configuration','Abandoned cart email automation','Returns, T&C, privacy pages','2 rounds of revisions + 2 weeks support'],
+    requiresFrom: [
+      {label:'Platform preference',type:'select',options:['Shopify','WooCommerce (WordPress)','No preference'],required:true},
+      {label:'Product list (CSV, spreadsheet, or description)',type:'file',required:false},
+      {label:'Product images',type:'file',required:false},
+      {label:'Number of products',type:'select',options:['1–10','11–25','26–50'],required:true},
+      {label:'Brand assets (logo, colours)',type:'file',required:false},
+      {label:'Shipping & delivery details',type:'textarea',placeholder:'Where do you ship? Any weight/size rules? Free shipping threshold?',required:true},
+      {label:'Payment methods needed',type:'select',options:['Stripe + PayPal','Stripe only','PayPal only','Other'],required:true},
+      {label:'Design inspiration',type:'textarea',required:false},
+    ],
+  },
+  {
+    id: 'landing-page', name: 'Landing Page', price: 149, currency: 'GBP', deliveryDays: 3, icon: '🏠',
+    category: 'Web & Digital', description: 'High-converting single page, 3-day delivery',
+    features: ['Single conversion page','Headline, benefits, social proof, CTA','Form or booking integration','Mobile optimised'],
+    bestFor: 'Campaigns, lead generation, product launches, and event sign-ups.',
+    whatsIncluded: ['1 fully designed landing page','Form or Calendly/booking integration','Mobile optimised','1 round of revisions'],
+    requiresFrom: [
+      {label:'Goal of this page',type:'select',options:['Capture email leads','Book a call/demo','Sell a product','Event sign-up','Other'],required:true},
+      {label:'Copy (headlines, body text)',type:'textarea',placeholder:'Paste your copy here, or describe what you want and we can draft it',required:false},
+      {label:'Brand assets',type:'file',required:false},
+      {label:'Form/booking tool',type:'select',options:['HubSpot form','Calendly embed','Stripe payment','Custom form','Other'],required:true},
+      {label:'Design inspiration',type:'textarea',required:false},
+    ],
+  },
+  {
+    id: 'brand-starter', name: 'Brand Starter Kit', price: 299, currency: 'GBP', deliveryDays: 7, icon: '✏️',
+    category: 'Brand & Design', description: 'Logo, colours, typography & brand guidelines',
+    features: ['Logo (3 concepts)','Brand colour palette','Typography selection','12-page brand guidelines PDF'],
+    bestFor: 'New businesses and rebrands needing a solid brand foundation.',
+    whatsIncluded: ['3 logo concepts on mood board','2 rounds of revisions on chosen concept','Primary + secondary colour palette','Font pairing for headings + body','Logo files: SVG, PNG (light + dark)'],
+    requiresFrom: [
+      {label:'Business name to use on logo',type:'text',placeholder:'Exact name as it should appear',required:true},
+      {label:'Industry / what you do',type:'textarea',placeholder:'Brief description of your business',required:true},
+      {label:'Tone / personality',type:'select',options:['Premium & luxury','Friendly & approachable','Bold & modern','Technical & professional','Other'],required:true},
+      {label:'Colours you like (or want to avoid)',type:'textarea',placeholder:'E.g. "I like dark navy and gold" or "No red please"',required:false},
+      {label:'Brand inspiration (logos/companies you like)',type:'textarea',placeholder:'URLs or names of brands whose visual identity you admire',required:false},
+    ],
+  },
+  {
+    id: 'brand-pro', name: 'Brand Pro Kit', price: 599, currency: 'GBP', deliveryDays: 10, icon: '📐',
+    category: 'Brand & Design', description: 'Full brand system including collateral', popular: true,
+    features: ['Everything in Starter','Business card (print-ready)','Email signature','Social profile assets (5 platforms)','Letterhead & document template'],
+    bestFor: 'Businesses that need a complete, ready-to-use brand system across all touchpoints.',
+    whatsIncluded: ['All Brand Starter Kit deliverables','Business card front + back, print-ready','HTML + image email signature','Profile covers + avatars for 5 platforms','Letterhead template (Word + PDF)','All source files in Figma'],
+    requiresFrom: [
+      {label:'Business name',type:'text',required:true},
+      {label:'Industry / what you do',type:'textarea',required:true},
+      {label:'Tone / personality',type:'select',options:['Premium & luxury','Friendly & approachable','Bold & modern','Technical & professional','Other'],required:true},
+      {label:'Existing logo (if applicable)',type:'file',required:false},
+      {label:'Tagline (if you have one)',type:'text',placeholder:'Your tagline or leave blank',required:false},
+      {label:'Contact details for business card',type:'textarea',placeholder:'Name, title, phone, email, website',required:true},
+      {label:'Social platforms for assets',type:'textarea',placeholder:'e.g. LinkedIn, Instagram, X, Facebook, YouTube',required:true},
+    ],
+  },
+  {
+    id: 'ai-chatbot', name: 'AI Chatbot Setup', price: 799, currency: 'GBP', deliveryDays: 7, icon: '💬',
+    category: 'AI & Tech', description: 'Custom AI chatbot trained on your content, deployed to your website', popular: true,
+    features: ['Trained on your content & FAQs','Lead capture integration','Deployed to your website','2 weeks post-launch support'],
+    bestFor: 'Businesses receiving repetitive enquiries that could be handled 24/7 by an AI assistant.',
+    whatsIncluded: ['Data ingestion from website, PDFs, FAQs','Custom personality and tone of voice','Lead capture + CRM handoff','Embedded widget deployed to your site','Conversation analytics dashboard','Full handover docs + re-training guide'],
+    requiresFrom: [
+      {label:'Your website URL',type:'url',required:true},
+      {label:'FAQs / knowledge base documents',type:'file',required:false},
+      {label:'What should the chatbot do?',type:'select',options:['Answer FAQs only','Capture leads','Book appointments/calls','Handle support queries','All of the above'],required:true},
+      {label:'Chatbot name / persona',type:'text',placeholder:'e.g. "Max" or leave blank to use company name',required:false},
+      {label:'CRM to send leads to',type:'select',options:['HubSpot','Email notification','Salesforce','None needed','Other'],required:true},
+      {label:'Topics the chatbot must NOT discuss',type:'textarea',placeholder:'e.g. competitor pricing, legal advice, etc.',required:false},
+    ],
+  },
+  {
+    id: 'ai-audit', name: 'AI Readiness Audit', price: 499, currency: 'GBP', deliveryDays: 5, icon: '🔍',
+    category: 'AI & Tech', description: '15–20 page report on AI opportunities in your business',
+    features: ['Written report 15–20 pages','Top 5–8 AI opportunities','Priority-ranked roadmap','1-hour strategy call walkthrough'],
+    bestFor: 'Leaders wanting a clear, no-nonsense view of how AI can help their specific business.',
+    whatsIncluded: ['1-hour discovery interview','Analysis of tools, data & workflows','Top AI use cases identified','Effort vs impact matrix','Vendor recommendations','12-month implementation roadmap'],
+    requiresFrom: [
+      {label:'Industry',type:'text',required:true},
+      {label:'Number of employees',type:'select',options:['1–5','6–20','21–50','51–200','200+'],required:true},
+      {label:'Current tools/software used',type:'textarea',placeholder:'List the main tools your team uses day to day',required:true},
+      {label:'Biggest time-wasting processes',type:'textarea',placeholder:'What repetitive tasks does your team do that you wish were automated?',required:true},
+      {label:'What AI tools do you currently use?',type:'textarea',placeholder:'None, or list them',required:false},
+    ],
+  },
+  {
+    id: 'automation-quickwin', name: 'Automation Quick-Win', price: 599, currency: 'GBP', deliveryDays: 5, icon: '⚡',
+    category: 'AI & Tech', description: 'One process automated end-to-end using Make, Zapier, or custom code',
+    features: ['One process automated end-to-end','Make, Zapier, or custom code','Full documentation','1 week post-handover support'],
+    bestFor: 'Teams spending time on repetitive manual work — data entry, follow-ups, notifications, status updates.',
+    whatsIncluded: ['Discovery call to select highest-impact automation','Full workflow mapping','Build and test in your existing tools','Error handling and fallback logic','30-min walkthrough training session'],
+    requiresFrom: [
+      {label:'Describe the manual process to automate',type:'textarea',placeholder:'Walk us through step by step what currently happens manually',required:true},
+      {label:'Tools involved in this process',type:'textarea',placeholder:'e.g. Gmail, HubSpot, Airtable, Slack, Google Sheets',required:true},
+      {label:'How often does this process run?',type:'select',options:['Multiple times daily','Daily','Weekly','On-demand / triggered'],required:true},
+      {label:'Access to existing tools',type:'select',options:['Yes I can provide API access','Some tools — will need help','Not sure — let us discuss on call'],required:true},
+    ],
+  },
+];
+export function getPackage(id: string) { return packages.find(p => p.id === id) || null; }
