@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   return (
     <>
-      <div className="bg-white border-b border-rule pt-[84px] sm:pt-[100px] pb-12 sm:pb-16">
+      <div className="page-hero">
         <div className="page-wrap">
           <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Work', href: '/work' }]} className="mb-5" />
-          <div className="max-w-[640px]">
+          <div className="page-hero-copy">
             <span className="eyebrow">Our Work</span>
             <h1 className="type-h1 text-[38px] sm:text-[56px] lg:text-[70px] mb-4">Projects we&apos;re <span className="serif-italic">proud of.</span></h1>
             <p className="type-body text-ink-2">A selection of LAUNCH, GROW, and BUILD projects. All results client-verified.</p>
@@ -29,7 +29,7 @@ export default function WorkPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {caseStudies.map(cs => (
               <Link key={cs.slug} href={`/work/${cs.slug}`} className="no-underline group">
-                <article className="bg-white border border-rule rounded-xl overflow-hidden group-hover:border-ink group-hover:-translate-y-1 group-hover:shadow-[0_16px_48px_rgba(14,13,9,0.1)] transition-all">
+                <article className="surface-card overflow-hidden group-hover:border-ink group-hover:-translate-y-1 group-hover:shadow-[0_16px_48px_rgba(14,13,9,0.1)] transition-all">
                   <div className="h-[200px] sm:h-[220px] flex items-center justify-center relative" style={{ background: cs.bg }}>
                     <div className="text-[56px] sm:text-[64px] opacity-20">{cs.glyph}</div>
                     <span className="absolute bottom-4 left-5 text-[11px] font-bold uppercase tracking-[0.1em] text-[rgba(14,13,9,0.35)]">{cs.tags[0]}</span>

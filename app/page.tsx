@@ -18,22 +18,25 @@ export const metadata: Metadata = {
 
 const serviceModels = [
   {
-    title: 'Fixed price. Fast delivery',
+    name: 'Launch',
+    summary: 'Fixed price. Fast delivery',
     text: 'Buy exactly what you need - websites, branding, AI tools - at a price you know upfront. Delivered in days, not months.',
     href: '/services/launch',
-    icon: 'rocket',
+    details: ['Websites from £199', 'Brand kits from £299', 'AI chatbot setup £799', '7-21 day delivery'],
   },
   {
-    title: 'Your always-on digital team.',
+    name: 'Grow',
+    summary: 'Your always-on digital team',
     text: 'Design, development, and marketing with fast turnaround, clear communication, and no agency drag.',
     href: '/services/grow',
-    icon: 'chart',
+    details: ['Unlimited design requests', 'Dedicated PM and Slack access', 'Fast turnaround across channels', 'Monthly plans from £349'],
   },
   {
-    title: 'Custom apps, AI & digital builds.',
+    name: 'Build',
+    summary: 'Custom apps, AI & digital builds.',
     text: 'Senior execution for product builds, internal systems, and AI-led tools that move your business forward.',
     href: '/services/build',
-    icon: 'wrench',
+    details: ['MVP to production delivery', 'AI workflows and internal tools', 'Senior product and engineering support', 'Custom scoping for every build'],
   },
 ];
 
@@ -96,6 +99,25 @@ const showcaseCards = [
     src: '/taxi.svg',
     contentClass: 'bottom-[28px] right-[28px] max-w-[190px]',
     imageClass: 'left-0 -top-[22%] h-[118%] w-[74%] sm:left-[2%] sm:-top-[18%] sm:h-[112%] sm:w-[68%]',
+  },
+];
+
+const processSteps = [
+  {
+    title: 'Choose your service',
+    body: 'Browse fixed-fee packages and enquire online, or book a free discovery call for subscriptions and custom builds. No gatekeeping, no sales pressure.',
+  },
+  {
+    title: 'We scope and align',
+    body: 'Your dedicated PM confirms scope, brief, and timeline. For bigger projects we run a Sprint 0 to align everyone before a line of code is written.',
+  },
+  {
+    title: 'We build and deliver',
+    body: 'Design-led, AI-assisted execution with regular check-ins and real-time visibility. Delivered to brief, on time, every time.',
+  },
+  {
+    title: 'You own everything',
+    body: 'Full IP transfer, source files, documented codebase, and ongoing support. For subscriptions, just submit the next request and keep scaling.',
   },
 ];
 
@@ -170,7 +192,7 @@ export default function HomePage() {
                       key={avatar.src}
                       className="relative h-[42px] w-[42px] overflow-hidden rounded-full border-2 border-white shadow-[0_4px_12px_rgba(0,0,0,0.06)]"
                     >
-                      <Image src={avatar.src} alt={avatar.alt} fill className="object-cover" />
+                      <Image src={avatar.src} alt={avatar.alt} fill sizes="42px" className="object-cover" />
                     </div>
                   ))}
                 </div>
@@ -187,32 +209,49 @@ export default function HomePage() {
 
       <section className="bg-white py-20 sm:py-24 lg:py-[132px]">
         <div className="page-wrap">
-          <div className="parallax-layer flex flex-col gap-8 pb-10 lg:flex-row lg:items-end lg:justify-between" data-parallax="10">
-            <h2 className="max-w-[495px] text-[34px] font-medium leading-[1.36] tracking-[-0.01em] text-[#3B3B3B] sm:text-[38px] lg:text-[42px]">
+          <div className="parallax-layer max-w-[620px] pb-12 lg:pb-16" data-parallax="10">
+            <h2 className="text-[34px] font-medium leading-[1.18] tracking-[-0.03em] text-[#2B2B2B] sm:text-[38px] lg:text-[42px]">
               Three ways to work with Us
             </h2>
-            <p className="max-w-[677px] text-[16px] leading-[22px] tracking-[0.06em] text-[rgba(80,80,80,0.83)]">
+            <p className="mt-4 max-w-[560px] text-[14px] leading-[1.7] tracking-[-0.01em] text-[rgba(90,90,90,0.8)] sm:text-[15px]">
               We build the websites, run the marketing, and ship the AI products that turn your business into a digital powerhouse.
             </p>
           </div>
 
-          <div className="parallax-layer grid gap-5 lg:grid-cols-3" data-parallax="16">
-            {serviceModels.map((model) => (
+          <div className="parallax-layer border-t border-[#ECE8E1]" data-parallax="16">
+            {serviceModels.map((model, index) => (
               <Link
-                key={model.title}
+                key={model.name}
                 href={model.href}
-                className="rounded-[34px] border border-[#ECECE6] bg-[#FAFAF7] p-9 no-underline shadow-[0_16px_40px_rgba(17,17,17,0.03)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_22px_52px_rgba(17,17,17,0.06)]"
+                className="group grid gap-4 border-b border-[#ECE8E1] py-8 no-underline transition-all duration-300 hover:rounded-[28px] hover:border-[#EEE7E1] hover:bg-[#FCF7F7] hover:px-5 hover:shadow-[0_16px_40px_rgba(17,17,17,0.04)] focus-visible:rounded-[28px] focus-visible:border-[#EEE7E1] focus-visible:bg-[#FCF7F7] focus-visible:px-5 focus-visible:shadow-[0_16px_40px_rgba(17,17,17,0.04)] sm:px-3 sm:py-10 lg:grid-cols-[116px_minmax(0,1fr)] lg:gap-10 lg:px-4 lg:hover:py-10 lg:focus-visible:py-10"
               >
-                <div className="mb-7 inline-flex h-[52px] w-[52px] items-center justify-center rounded-[14px] bg-white shadow-[0_10px_24px_rgba(17,17,17,0.05)]">
-                  <ServiceIcon type={model.icon} />
+                <div className="text-[38px] font-light leading-none tracking-[-0.05em] text-[#948E87] transition-colors duration-300 group-hover:text-[#847D76] group-focus-visible:text-[#847D76] lg:pt-1">
+                  {String(index + 1).padStart(2, '0')}
                 </div>
-                <h3 className="text-[26px] font-medium leading-[1.2] tracking-[-0.03em] text-[#222222]">
-                  {model.title}
-                </h3>
-                <p className="mt-4 text-[16px] leading-[1.6] tracking-[-0.01em] text-[#737373]">
-                  {model.text}
-                </p>
-                <div className="mt-9 text-[16px] font-medium tracking-[-0.03em] text-black">Explore more</div>
+                <div className="max-w-[760px]">
+                  <h3 className="text-[34px] font-medium leading-[1.05] tracking-[-0.04em] text-[#1E1E1E] sm:text-[40px] lg:text-[44px]">
+                    {model.name}
+                  </h3>
+                  <div className="mt-3 text-[22px] font-medium leading-[1.2] tracking-[-0.03em] text-[#2A2A2A] sm:text-[24px]">
+                    {model.summary}
+                  </div>
+                  <p className="mt-3 max-w-[640px] text-[14px] leading-[1.7] tracking-[-0.01em] text-[rgba(95,95,95,0.82)] sm:text-[15px]">
+                    {model.text}
+                  </p>
+                  <div className="grid max-h-[220px] overflow-hidden opacity-100 transition-all duration-300 ease-out lg:max-h-0 lg:opacity-0 lg:group-hover:mt-6 lg:group-hover:max-h-[260px] lg:group-hover:opacity-100 lg:group-focus-visible:mt-6 lg:group-focus-visible:max-h-[260px] lg:group-focus-visible:opacity-100">
+                    <ul className="space-y-2 text-[15px] leading-[1.55] tracking-[-0.01em] text-[#7A746C]">
+                      {model.details.map((detail) => (
+                        <li key={detail} className="flex items-start gap-2">
+                          <span className="mt-[2px] text-[#8F887F]">&bull;</span>
+                          <span>{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <span className="mt-6 inline-flex h-[40px] w-fit items-center rounded-full border border-[#2A2A2A] px-6 text-[14px] font-medium leading-none text-[#2A2A2A] transition-colors duration-200 group-hover:bg-white group-focus-visible:bg-white">
+                      Explore
+                    </span>
+                  </div>
+                </div>
               </Link>
             ))}
           </div>
@@ -238,6 +277,7 @@ export default function HomePage() {
                 src="/are-u-ready.svg"
                 alt="Product illustration for the digital growth section"
                 fill
+                sizes="(max-width: 1023px) 100vw, 534px"
                 className="object-cover object-center"
               />
             </div>
@@ -277,6 +317,49 @@ export default function HomePage() {
             <ShowcaseCard card={showcaseCards[1]} />
             <ShowcaseCard card={showcaseCards[2]} />
             <ShowcaseCard card={showcaseCards[3]} />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-20 sm:py-24 lg:py-[132px]">
+        <div className="page-wrap">
+          <div className="grid gap-14 lg:grid-cols-[minmax(360px,0.92fr)_minmax(0,1.08fr)] lg:items-start lg:gap-16">
+            <div className="parallax-layer max-w-[440px] lg:pt-2" data-parallax="12">
+              <div className="text-[12px] font-medium uppercase tracking-[0.2em] text-[#8A857E]">Our Process</div>
+              <h2 className="mt-4 text-[40px] font-medium leading-[0.96] tracking-[-0.05em] text-[#141414] sm:text-[54px] lg:text-[66px]">
+                Simple. Honest.
+                <br />
+                <span className="serif-italic font-normal tracking-[-0.025em]">Repeatable.</span>
+              </h2>
+              <p className="mt-8 max-w-[400px] text-[16px] leading-[1.7] tracking-[-0.01em] text-[#6F6A63]">
+                We&apos;ve stripped out everything that wastes time or money. What&apos;s left is a clear process that gets you results fast, every time.
+              </p>
+              <Link href="/about" className="link-arrow mt-10">
+                Learn more about us
+                <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+
+            <div className="parallax-layer border-t border-[#ECE7DE]" data-parallax="20">
+              {processSteps.map((step, index) => (
+                <article
+                  key={step.title}
+                  className="grid gap-4 border-b border-[#ECE7DE] py-7 sm:grid-cols-[72px_minmax(0,1fr)] sm:gap-8 sm:py-9 lg:grid-cols-[64px_minmax(0,1fr)] lg:py-10"
+                >
+                  <div className="text-[22px] font-light tracking-[-0.03em] text-[#8C867E] sm:pt-0.5">
+                    {String(index + 1).padStart(2, '0')}
+                  </div>
+                  <div className="max-w-[620px]">
+                    <h3 className="text-[24px] font-medium leading-[1.15] tracking-[-0.03em] text-[#1B1B1B] sm:text-[28px]">
+                      {step.title}
+                    </h3>
+                    <p className="mt-3 text-[15px] leading-[1.75] tracking-[-0.01em] text-[#6F6A63] sm:text-[16px]">
+                      {step.body}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -322,7 +405,7 @@ export default function HomePage() {
                 <div className="flex -space-x-3.5">
                   {reviewAvatars.map((avatar) => (
                     <div key={avatar.src} className="relative h-[44px] w-[44px] overflow-hidden rounded-full border-2 border-white shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
-                      <Image src={avatar.src} alt={avatar.alt} fill className="object-cover" />
+                      <Image src={avatar.src} alt={avatar.alt} fill sizes="44px" className="object-cover" />
                     </div>
                   ))}
                 </div>
@@ -345,33 +428,6 @@ export default function HomePage() {
         </div>
       </section>
     </>
-  );
-}
-
-function ServiceIcon({ type }: { type: string }) {
-  if (type === 'chart') {
-    return (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M4 18.5H20" stroke="#000" strokeWidth="1.8" strokeLinecap="round" />
-        <path d="M6 15L10 11L13 14L18 8" stroke="#000" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M16.5 8H18V9.5" stroke="#000" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    );
-  }
-
-  if (type === 'wrench') {
-    return (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M14.5 6.5A4.5 4.5 0 0 0 9 12l-4.75 4.75a1.77 1.77 0 1 0 2.5 2.5L11.5 14A4.5 4.5 0 0 0 17 8.5L14 11.5l-1.5-1.5 3-3Z" stroke="#000" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    );
-  }
-
-  return (
-    <svg width="18" height="21" viewBox="0 0 18 21" fill="none" aria-hidden="true">
-      <path d="M8.31 1.33c.31-.51 1.07-.51 1.38 0l2.04 3.41 3.86.83c.63.13.88.9.45 1.39l-2.64 3.03.4 3.98c.07.65-.61 1.14-1.18.84L9 13.15l-3.62 1.66c-.57.3-1.25-.19-1.18-.84l.4-3.98L1.96 6.96c-.43-.49-.18-1.26.45-1.39l3.86-.83L8.31 1.33Z" fill="#000" />
-      <path d="M9 13.15V20" stroke="#000" strokeWidth="1.6" strokeLinecap="round" />
-    </svg>
   );
 }
 
@@ -411,7 +467,7 @@ function ShowcaseCard({
       </div>
 
       <div className={`absolute ${card.imageClass}`}>
-        <Image src={card.src} alt={card.title} fill className="object-contain object-center" />
+        <Image src={card.src} alt={card.title} fill sizes="(max-width: 1023px) 100vw, 50vw" className="object-contain object-center" />
       </div>
     </article>
   );

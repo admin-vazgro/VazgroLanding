@@ -20,7 +20,7 @@ function SuccessContent() {
         </p>
 
         {/* Gateway-specific info */}
-        <div className="bg-white border border-rule rounded-xl p-4 sm:p-5 mb-5 text-left">
+        <div className="section-panel p-4 sm:p-5 mb-5 text-left shadow-none">
           <div className="flex items-center gap-2 mb-3">
             <span className="text-[10px] font-bold uppercase tracking-[0.1em] px-2.5 py-1 rounded-full bg-sage-lt text-sage border border-[rgba(26,107,84,0.15)]">
               {isRazorpay ? 'Razorpay' : 'Stripe'}
@@ -34,7 +34,7 @@ function SuccessContent() {
           </p>
         </div>
 
-        <div className="bg-white border border-rule rounded-xl p-5 sm:p-7 mb-7 text-left">
+        <div className="section-panel p-5 sm:p-7 mb-7 text-left shadow-none">
           <div className="font-bold text-[14px] sm:text-[15px] mb-4 text-ink">What happens next</div>
           <div className="flex flex-col gap-3">
             {[

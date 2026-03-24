@@ -7,15 +7,16 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <div className="pt-[84px] sm:pt-[100px] pb-16 sm:pb-24">
+    <div className="legal-shell">
       <div className="page-wrap max-w-[720px]">
-        <span className="eyebrow">Legal</span>
-        <h1 className="type-h1 text-[30px] sm:text-[42px] mb-6">
-          Terms of <span className="serif-italic">Service</span>
-        </h1>
-        <p className="text-[13px] text-muted mb-8">Last updated: March 2026</p>
+        <div className="legal-card">
+          <span className="eyebrow">Legal</span>
+          <h1 className="type-h1 text-[30px] sm:text-[42px] mb-6">
+            Terms of <span className="serif-italic">Service</span>
+          </h1>
+          <p className="text-[13px] text-muted mb-8">Last updated: March 2026</p>
 
-        <div className="space-y-6 text-[14px] sm:text-[15px] text-ink-2 leading-[1.72]">
+          <div className="space-y-6 text-[14px] sm:text-[15px] text-ink-2 leading-[1.72]">
           <section>
             <h2 className="font-bold text-[17px] text-ink mb-2">1. Services</h2>
             <p>Vazgro Ltd provides digital agency services including web design, branding, AI development, and marketing under three service models: LAUNCH (fixed-fee), GROW (subscription), and BUILD (custom scoping). All deliverables, timelines, and pricing are confirmed before work begins.</p>
@@ -55,6 +56,7 @@ export default function TermsPage() {
             <h2 className="font-bold text-[17px] text-ink mb-2">8. Contact</h2>
             <p>For questions about these terms, email <a href="mailto:legal@vazgro.com" className="text-blue no-underline hover:underline">legal@vazgro.com</a>.</p>
           </section>
+          </div>
         </div>
       </div>
     </div>

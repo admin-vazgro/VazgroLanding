@@ -47,6 +47,7 @@ export default function HeroCarousel() {
                   alt={slide.alt}
                   fill
                   priority={index === 0}
+                  sizes="(max-width: 1023px) 100vw, 50vw"
                   className="object-cover object-center"
                 />
               </div>

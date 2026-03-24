@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <div className="bg-white border-b border-rule pt-[84px] sm:pt-[100px] pb-12 sm:pb-16">
+      <div className="page-hero">
         <div className="page-wrap">
           <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'About', href: '/about' }]} className="mb-5" />
-          <div className="parallax-layer max-w-[680px]" data-parallax="14">
+          <div className="page-hero-copy parallax-layer" data-parallax="14">
             <span className="eyebrow">About Vazgro</span>
             <h1 className="type-h1 text-[30px] sm:text-[46px] lg:text-[62px] mb-4">Built by digital practitioners —<br /><span className="serif-italic">for ambitious businesses.</span></h1>
             <p className="type-body text-ink-2">We started Vazgro because UK SMEs were overpaying for mediocre agency work. There had to be a better model.</p>
@@ -38,7 +38,7 @@ export default function AboutPage() {
                 ['👥', 'Who we serve', 'UK SMEs, startups, and growing businesses who need a digital partner they can trust — not a ticket-processing machine.'],
                 ['📍', 'Based in London', 'Our team is UK-based, working UK hours. A real person to call. Serving clients across the country.'],
               ].map(([ico, t, d]) => (
-                <div key={t} className="bg-white border border-rule rounded-xl p-5 sm:p-6 hover:border-ink transition-colors">
+                <div key={t} className="info-card surface-card-hover">
                   <div className="text-[18px] mb-2.5">{ico}</div>
                   <h3 className="font-bold text-[14px] sm:text-[15px] mb-2">{t}</h3>
                   <p className="text-[13px] sm:text-[14px] text-muted leading-relaxed">{d}</p>
@@ -59,10 +59,10 @@ export default function AboutPage() {
               ['🤝', 'Partnership, not vendor', 'Your PM knows your business and goals. We push back when something will not work. Your success matters more.'],
               ['📈', 'Outcomes over outputs', 'We measure by results, not deliverables. If a strategy is not working, we will tell you and recommend something better.'],
             ].map(([ico, t, d]) => (
-              <div key={t} className="bg-white border border-rule rounded-xl p-6 sm:p-8 hover:border-ink transition-colors">
-                <div className="text-[20px] sm:text-[22px] mb-4">{ico}</div>
-                <h3 className="font-bold text-[15px] sm:text-[17px] tracking-[-0.01em] mb-2.5">{t}</h3>
-                <p className="text-[13px] sm:text-[14px] text-muted leading-relaxed">{d}</p>
+            <div key={t} className="info-card surface-card-hover sm:px-8 sm:py-8">
+              <div className="text-[20px] sm:text-[22px] mb-4">{ico}</div>
+              <h3 className="font-bold text-[15px] sm:text-[17px] tracking-[-0.01em] mb-2.5">{t}</h3>
+              <p className="text-[13px] sm:text-[14px] text-muted leading-relaxed">{d}</p>
               </div>
             ))}
           </div>

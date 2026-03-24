@@ -9,9 +9,9 @@ export default function PartnerPage() {
 
   return (
     <>
-      <div className="bg-white border-b border-[#D9D6CD] pt-[80px] sm:pt-[90px] pb-12 sm:pb-16">
+      <div className="page-hero">
         <div className="page-wrap">
-          <div className="max-w-[640px]">
+          <div className="page-hero-copy">
             <span className="eyebrow">Partner & Referral Programme</span>
             <h1 className="type-h1 text-[32px] sm:text-[46px] lg:text-[58px] mb-4">
               Earn by referring.<br /><span className="serif-italic">We handle the rest.</span>
@@ -23,16 +23,18 @@ export default function PartnerPage() {
         </div>
       </div>
 
-      <div className="flex items-center flex-wrap justify-center gap-6 sm:gap-12 py-4 sm:py-5 px-4 border-b border-[#D9D6CD] bg-[#EFECE4]">
+      <div className="metric-strip">
+        <div className="page-wrap metric-strip-grid">
         {[['10–15%','Commission rate'],['Monthly','Payout cycle'],['No cap','On earnings'],['2 days','Approval time']].map(([n,l])=>(
           <div key={n} className="text-center">
             <div className="text-[18px] sm:text-[22px] font-extrabold tracking-[-0.03em] serif-italic">{n}</div>
             <div className="text-[11px] sm:text-[12px] text-[#7E7B72]">{l}</div>
           </div>
         ))}
+        </div>
       </div>
 
-      <section className="section-pad border-b border-[#D9D6CD]">
+      <section className="section-pad border-b border-rule">
         <div className="page-wrap">
           <span className="eyebrow">Partnership models</span>
           <h2 className="type-h2 text-[24px] sm:text-[34px] lg:text-[44px] mb-8 sm:mb-10">Three ways to <span className="serif-italic">earn with Vazgro</span></h2>
@@ -42,7 +44,7 @@ export default function PartnerPage() {
               {icon:'📞',color:'#1400FF',bg:'#EEEEFF',title:'Commission SDR',commission:'15% of all revenue in first 6 months',items:['Pick up leads from our CRM','Work them in your own time','We handle delivery','Paid monthly on revenue received']},
               {icon:'🏢',color:'#E03D00',bg:'#FFF0EB',title:'Agency White-Label',commission:'20–30% wholesale discount',items:['Your clients, your brand','We deliver, you invoice','Dedicated partner manager','Volume-based tier upgrades']},
             ].map(m=>(
-              <div key={m.title} className="bg-white border border-[#D9D6CD] rounded-xl p-6 sm:p-8 hover:border-[#0E0D09] hover:shadow-[0_8px_32px_rgba(14,13,9,0.07)] transition-all">
+              <div key={m.title} className="info-card surface-card-hover sm:px-8 sm:py-8">
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center text-[18px] mb-5" style={{background:m.bg}}>{m.icon}</div>
                 <h3 className="font-bold text-[15px] sm:text-[17px] mb-2">{m.title}</h3>
                 <p className="text-[12px] sm:text-[13px] font-semibold mb-4 leading-snug" style={{color:m.color}}>{m.commission}</p>
@@ -55,17 +57,17 @@ export default function PartnerPage() {
         </div>
       </section>
 
-      <section className="section-pad bg-[#EFECE4] border-b border-[#D9D6CD]">
+      <section className="section-pad bg-cream-2 border-b border-rule">
         <div className="page-wrap">
           <div className="max-w-[520px] mx-auto">
-            <div className="flex border border-[#D9D6CD] rounded-xl overflow-hidden mb-6 bg-white">
+            <div className="flex border border-rule rounded-[26px] overflow-hidden mb-6 bg-white">
               {(['apply','login'] as const).map(t=>(
                 <button key={t} onClick={()=>setTab(t)} className={`flex-1 py-3 text-[13px] sm:text-[14px] font-semibold transition-colors border-none cursor-pointer font-sans ${tab===t?'bg-[#0E0D09] text-[#F6F4EE]':'bg-transparent text-[#7E7B72] hover:text-[#0E0D09]'}`}>
                   {t==='apply'?'Apply to Join':'Partner Login'}
                 </button>
               ))}
             </div>
-            <div className="bg-white border border-[#D9D6CD] rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div className="section-panel p-6 sm:p-8 shadow-none">
               {tab==='login'?(
                 <div>
                   <h3 className="font-bold text-[16px] sm:text-[18px] mb-1">Partner login</h3>
@@ -114,7 +116,7 @@ export default function PartnerPage() {
         </div>
       </section>
 
-      <div className="bg-[#0E0D09] py-14 sm:py-20 text-center">
+      <div className="bg-ink py-14 sm:py-20 text-center">
         <div className="page-wrap max-w-[480px]">
           <h2 className="type-h2 text-[24px] sm:text-[34px] text-white mb-3">Questions about <span className="serif-italic text-[rgba(255,255,255,0.35)]">partnering?</span></h2>
           <p className="type-body text-[rgba(255,255,255,0.5)] mb-6">Email us and we will get back to you within a day.</p>

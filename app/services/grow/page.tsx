@@ -13,9 +13,9 @@ export default function GrowPage() {
   return (
     <>
       {/* Hero */}
-      <div className="bg-white border-b border-rule pt-[84px] sm:pt-[100px] pb-10 sm:pb-14">
+      <div className="page-hero">
         <div className="page-wrap">
-          <div className="parallax-layer max-w-[680px]" data-parallax="14">
+          <div className="page-hero-copy parallax-layer" data-parallax="14">
             <span className="eyebrow">📈 GROW</span>
             <h1 className="type-h1 text-[32px] sm:text-[48px] lg:text-[64px] mb-4">
               Your always-on<br />
@@ -29,9 +29,9 @@ export default function GrowPage() {
       </div>
 
       {/* Key highlights */}
-      <div className="border-b border-rule bg-sage-lt py-4 sm:py-5">
+      <div className="metric-strip bg-sage-lt">
         <div className="page-wrap">
-          <div className="parallax-layer flex flex-wrap items-center justify-center gap-6 sm:gap-12 text-center" data-parallax="10">
+          <div className="metric-strip-grid parallax-layer" data-parallax="10">
             {[['From £349/mo', 'Starting price'], ['3 month', 'Minimum commitment'], ['Unlimited', 'Revisions included'], ['Dedicated PM', 'Slack access']].map(([n, l]) => (
               <div key={n}>
                 <div className="text-[16px] sm:text-[18px] font-extrabold tracking-[-0.02em] serif-italic text-sage">{n}</div>
@@ -64,7 +64,7 @@ export default function GrowPage() {
 
           <div className="parallax-layer grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5" data-parallax="18">
             {growPlans.filter(p => p.track === activeTrack).map(plan => (
-              <div key={plan.id} className={`bg-white border rounded-xl p-5 sm:p-7 flex flex-col transition-all relative ${plan.popular ? 'border-sage shadow-[0_8px_32px_rgba(26,107,84,0.1)]' : 'border-rule hover:border-sage'}`}>
+              <div key={plan.id} className={`info-card flex flex-col transition-all relative ${plan.popular ? 'border-sage shadow-[0_18px_48px_rgba(26,107,84,0.11)]' : 'surface-card-hover hover:border-sage'}`}>
                 {plan.popular && (
                   <span className="absolute top-4 right-4 text-[10px] font-bold uppercase tracking-[0.08em] px-2.5 py-1 rounded-full bg-sage-lt text-sage border border-[rgba(26,107,84,0.15)]">
                     Most Popular
@@ -115,7 +115,7 @@ export default function GrowPage() {
               { ico: '♾️', t: 'Unlimited revisions', d: 'We iterate until you are happy. Every time.' },
               { ico: '📊', t: 'Monthly reports', d: 'Clear progress tracking, output summaries, and strategy alignment.' },
             ].map(item => (
-              <div key={item.t} className="bg-white border border-rule rounded-xl p-5">
+              <div key={item.t} className="info-card-compact">
                 <div className="text-[20px] mb-3">{item.ico}</div>
                 <div className="font-bold text-[14px] mb-1.5">{item.t}</div>
                 <p className="text-[13px] text-muted leading-relaxed">{item.d}</p>

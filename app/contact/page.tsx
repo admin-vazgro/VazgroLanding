@@ -46,9 +46,9 @@ export default function ContactPage() {
 
   return (
     <>
-      <div className="bg-white border-b border-rule pt-[84px] sm:pt-[100px] pb-10 sm:pb-14">
+      <div className="page-hero">
         <div className="page-wrap">
-          <div className="parallax-layer max-w-[580px]" data-parallax="14">
+          <div className="page-hero-copy parallax-layer" data-parallax="14">
             <span className="eyebrow">Get in touch</span>
             <h1 className="type-h1 text-[30px] sm:text-[46px] lg:text-[60px] mb-4">
               Let&apos;s talk about <span className="serif-italic">your project.</span>
@@ -64,7 +64,7 @@ export default function ContactPage() {
         <div className="page-wrap">
           <div className="grid lg:grid-cols-[1.4fr_1fr] gap-10 sm:gap-14 items-start">
             {/* Form */}
-            <div className="parallax-layer bg-white border border-rule rounded-xl p-6 sm:p-8 lg:p-10" data-parallax="18">
+            <div className="parallax-layer section-panel p-6 sm:p-8 lg:p-10" data-parallax="18">
               {submitted ? (
                 <div className="text-center py-8">
                   <div className="text-[44px] mb-4">✅</div>
@@ -117,15 +117,15 @@ export default function ContactPage() {
                 ['📍', 'Location', 'London, United Kingdom', 'Serving clients nationwide'],
                 ['⏱', 'Response time', 'Within 4 business hours', 'Mon–Fri, 9am–6pm GMT'],
               ].map(([ico, lbl, val, sub]) => (
-                <div key={lbl} className="flex gap-3.5 mb-5 sm:mb-6">
-                  <div className="w-9 h-9 rounded-lg bg-cream-2 border border-rule flex items-center justify-center text-[15px] flex-shrink-0">{ico}</div>
+                <div key={lbl} className="info-card-compact flex gap-3.5 mb-4 last:mb-0">
+                  <div className="w-10 h-10 rounded-xl bg-cream-2 border border-rule flex items-center justify-center text-[15px] flex-shrink-0">{ico}</div>
                   <div>
                     <div className="font-bold text-[13px] mb-0.5">{lbl}</div>
                     <div className="text-[12px] sm:text-[13px] text-muted">{val}{sub && <><br />{sub}</>}</div>
                   </div>
                 </div>
               ))}
-              <div className="bg-ink rounded-xl p-6 sm:p-7 text-center mt-4 sm:mt-6">
+              <div className="bg-ink rounded-[30px] p-6 sm:p-7 text-center mt-4 sm:mt-6 shadow-[0_18px_48px_rgba(17,17,17,0.12)]">
                 <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-[rgba(255,255,255,0.3)] mb-2.5">Skip the form</div>
                 <div className="text-[16px] sm:text-[18px] font-bold text-white mb-2">Book a Free 30-Min Call</div>
                 <p className="text-[12px] sm:text-[13px] text-[rgba(255,255,255,0.45)] mb-5 leading-relaxed">Talk to a real member of the Vazgro team. Honest advice — even if that means pointing you elsewhere.</p>

@@ -42,10 +42,10 @@ export default function BlogPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }} />
 
       {/* Hero */}
-      <div className="bg-white border-b border-rule pt-[84px] sm:pt-[100px] pb-10 sm:pb-14">
+      <div className="page-hero">
         <div className="page-wrap">
           <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Blog', href: '/blog' }]} className="mb-5" />
-          <div className="max-w-[640px]">
+          <div className="page-hero-copy">
             <span className="eyebrow">Blog</span>
             <h1 className="type-h1 text-[32px] sm:text-[48px] lg:text-[64px] mb-4">
               Insights for <span className="serif-italic">growth.</span>
@@ -62,7 +62,7 @@ export default function BlogPage() {
         <div className="page-wrap">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {blogPosts.map(post => (
-              <article key={post.slug} className="bg-white border border-rule rounded-xl overflow-hidden hover:border-ink hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(14,13,9,0.08)] transition-all group">
+              <article key={post.slug} className="surface-card overflow-hidden hover:border-ink hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(14,13,9,0.08)] transition-all group">
                 <div className="h-[6px]" style={{ background: post.color }} />
                 <div className="p-5 sm:p-6">
                   <div className="flex items-center gap-2 mb-3">
@@ -92,7 +92,7 @@ export default function BlogPage() {
 
           {/* Newsletter signup */}
           <div className="mt-14 sm:mt-18">
-            <div className="bg-cream-2 border border-rule rounded-xl p-6 sm:p-8 lg:p-10 max-w-[640px] mx-auto text-center">
+            <div className="section-panel p-6 sm:p-8 lg:p-10 max-w-[680px] mx-auto text-center">
               <div className="text-[28px] mb-3">📬</div>
               <h3 className="font-bold text-[18px] sm:text-[20px] mb-2">Get insights in your inbox</h3>
               <p className="text-[13px] sm:text-[14px] text-muted leading-relaxed mb-5 max-w-[400px] mx-auto">

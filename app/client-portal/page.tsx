@@ -6,7 +6,7 @@ export default function ClientPortalPage() {
   const [tab, setTab] = useState<'login' | 'signup'>('login');
 
   return (
-    <div className="min-h-[calc(100vh-60px)] bg-[#F6F4EE] flex items-center justify-center px-4 sm:px-6 py-12">
+    <div className="min-h-[calc(100vh-60px)] bg-cream flex items-center justify-center px-4 sm:px-6 py-12">
       <div className="w-full max-w-[440px]">
         {/* Logo & title */}
         <div className="text-center mb-7">
@@ -16,9 +16,9 @@ export default function ClientPortalPage() {
           <div className="text-[13px] text-[#7E7B72] mt-1.5">Client Portal</div>
         </div>
 
-        <div className="bg-white border border-[#D9D6CD] rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(14,13,9,0.06)]">
+        <div className="section-panel overflow-hidden">
           {/* Tab bar */}
-          <div className="flex border-b border-[#D9D6CD]">
+          <div className="flex border-b border-rule">
             {(['login', 'signup'] as const).map(t => (
               <button
                 key={t}
@@ -62,10 +62,10 @@ export default function ClientPortalPage() {
               <div>
                 <h2 className="font-bold text-[16px] sm:text-[18px] text-[#0E0D09] mb-1">Get access</h2>
                 <p className="text-[12px] sm:text-[13px] text-[#7E7B72] mb-5">Portal access is provided when you start a project</p>
-                <div className="bg-[#EEEEFF] border border-[rgba(20,0,255,0.12)] rounded-xl p-4 text-[12px] sm:text-[13px] text-[#1400FF] mb-5">
+                <div className="bg-[#EEEEFF] border border-[rgba(20,0,255,0.12)] rounded-[22px] p-4 text-[12px] sm:text-[13px] text-[#1400FF] mb-5">
                   Your portal account is created automatically when you purchase a LAUNCH package or start a GROW subscription. Check your email for login details.
                 </div>
-                <div className="border-t border-[#D9D6CD] pt-5 mb-5">
+                <div className="border-t border-rule pt-5 mb-5">
                   <div className="text-[10px] font-bold uppercase tracking-[0.1em] text-[#7E7B72] mb-3">What is inside the portal</div>
                   <div className="space-y-2.5">
                     {[

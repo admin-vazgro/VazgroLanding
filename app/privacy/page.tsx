@@ -7,15 +7,16 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="pt-[84px] sm:pt-[100px] pb-16 sm:pb-24">
+    <div className="legal-shell">
       <div className="page-wrap max-w-[720px]">
-        <span className="eyebrow">Legal</span>
-        <h1 className="type-h1 text-[30px] sm:text-[42px] mb-6">
-          Privacy <span className="serif-italic">Policy</span>
-        </h1>
-        <p className="text-[13px] text-muted mb-8">Last updated: March 2026</p>
+        <div className="legal-card">
+          <span className="eyebrow">Legal</span>
+          <h1 className="type-h1 text-[30px] sm:text-[42px] mb-6">
+            Privacy <span className="serif-italic">Policy</span>
+          </h1>
+          <p className="text-[13px] text-muted mb-8">Last updated: March 2026</p>
 
-        <div className="prose-vazgro space-y-6 text-[14px] sm:text-[15px] text-ink-2 leading-[1.72]">
+          <div className="prose-vazgro space-y-6 text-[14px] sm:text-[15px] text-ink-2 leading-[1.72]">
           <section>
             <h2 className="font-bold text-[17px] text-ink mb-2">1. Who we are</h2>
             <p>Vazgro Ltd is a digital agency registered in England & Wales, operating from London, UK. When we refer to &ldquo;Vazgro&rdquo;, &ldquo;we&rdquo;, or &ldquo;us&rdquo;, we mean Vazgro Ltd.</p>
@@ -51,6 +52,7 @@ export default function PrivacyPage() {
             <h2 className="font-bold text-[17px] text-ink mb-2">7. Contact</h2>
             <p>For privacy-related enquiries, email <a href="mailto:privacy@vazgro.com" className="text-blue no-underline hover:underline">privacy@vazgro.com</a>.</p>
           </section>
+          </div>
         </div>
       </div>
     </div>

@@ -5,10 +5,10 @@ export default function BuildPage() {
   return (
     <>
       {/* Hero */}
-      <div className="bg-white border-b border-rule pt-[84px] sm:pt-[100px] pb-10 sm:pb-14">
+      <div className="page-hero">
         <div className="page-wrap">
           <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Services', href: '/services/build' }, { name: 'BUILD', href: '/services/build' }]} className="mb-5" />
-          <div className="parallax-layer max-w-[680px]" data-parallax="14">
+          <div className="page-hero-copy parallax-layer" data-parallax="14">
             <span className="eyebrow">🔧 BUILD</span>
             <h1 className="type-h1 text-[32px] sm:text-[48px] lg:text-[64px] mb-4">
               Custom apps, AI &<br />
@@ -43,7 +43,7 @@ export default function BuildPage() {
               { ico: '🔄', color: '#E09000', t: 'Sprint Retainers', d: 'Ongoing development capacity for businesses with continuous build needs. Predictable, flexible, scalable.', items: ['Dedicated dev team', 'Sprint-based delivery', 'Weekly sync calls', 'Flexible scope changes'] },
               { ico: '🤝', color: '#0E0D09', t: 'Co-Founder Model', d: 'We invest our time for equity. For the right idea, we become your technical co-founder.', items: ['Sweat equity partnership', 'CTO-level technical leadership', 'Architecture & team building', 'Investor-ready product'] },
             ].map(item => (
-              <div key={item.t} className="bg-white border border-rule rounded-xl p-5 sm:p-7 hover:border-ink hover:shadow-[0_8px_32px_rgba(14,13,9,0.07)] transition-all">
+              <div key={item.t} className="info-card surface-card-hover sm:px-7 sm:py-7">
                 <div className="text-[24px] mb-4">{item.ico}</div>
                 <h3 className="font-extrabold text-[16px] sm:text-[17px] tracking-[-0.02em] mb-2">{item.t}</h3>
                 <p className="text-[13px] text-muted leading-relaxed mb-4">{item.d}</p>
@@ -75,7 +75,7 @@ export default function BuildPage() {
               { t: 'Custom Platform', price: '£10,000–£25,000+', time: '8–16 weeks', desc: 'Full SaaS or enterprise application' },
               { t: 'Sprint Retainer', price: '£2,500–£8,000/mo', time: 'Ongoing', desc: 'Dedicated dev capacity, sprint-based' },
             ].map(p => (
-              <div key={p.t} className="bg-white border border-rule rounded-xl p-5 sm:p-6 text-center">
+              <div key={p.t} className="info-card text-center">
                 <div className="font-bold text-[14px] mb-2">{p.t}</div>
                 <div className="serif-italic text-[22px] sm:text-[26px] font-extrabold tracking-[-0.02em] text-warm mb-1">{p.price}</div>
                 <div className="text-[12px] text-muted mb-2">{p.time}</div>
@@ -101,7 +101,7 @@ export default function BuildPage() {
               { n: '04', t: 'Build', d: 'Agile sprints. Weekly demos. Continuous deployment.' },
               { n: '05', t: 'Launch', d: 'Production deployment, handover docs, 2-week support.' },
             ].map(s => (
-              <div key={s.n} className="bg-white border border-rule rounded-xl p-5">
+              <div key={s.n} className="info-card-compact">
                 <div className="text-warm text-[11px] font-bold uppercase tracking-[0.1em] mb-2">{s.n}</div>
                 <div className="font-bold text-[14px] mb-1.5">{s.t}</div>
                 <p className="text-[12px] sm:text-[13px] text-muted leading-relaxed">{s.d}</p>

@@ -14,10 +14,10 @@ export default function LaunchPage() {
 
   return (
     <>
-      <div className="bg-white border-b border-rule pt-[84px] sm:pt-[100px] pb-10 sm:pb-14">
+      <div className="page-hero">
         <div className="page-wrap">
           <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Services', href: '/services/launch' }, { name: 'LAUNCH', href: '/services/launch' }]} className="mb-5" />
-          <div className="parallax-layer max-w-[680px]" data-parallax="14">
+          <div className="page-hero-copy parallax-layer" data-parallax="14">
             <span className="eyebrow">⚡ LAUNCH</span>
             <h1 className="type-h1 text-[32px] sm:text-[48px] lg:text-[64px] mb-4">
               Fixed price.<br /><span className="serif-italic">Fast delivery.</span>
@@ -29,9 +29,9 @@ export default function LaunchPage() {
         </div>
       </div>
 
-      <div className="border-b border-rule bg-cream-2 py-4 sm:py-5">
+      <div className="metric-strip">
         <div className="page-wrap">
-          <div className="parallax-layer flex flex-wrap items-center justify-center gap-6 sm:gap-12 text-center" data-parallax="10">
+          <div className="metric-strip-grid parallax-layer" data-parallax="10">
             {[['From £149', 'Starting price'], ['3–21 days', 'Delivery window'], ['Fixed price', 'No hidden costs'], ['2 revisions', 'Included free']].map(([n, l]) => (
               <div key={n}><div className="text-[16px] sm:text-[18px] font-extrabold tracking-[-0.02em] serif-italic">{n}</div><div className="text-[11px] sm:text-[12px] text-muted">{l}</div></div>
             ))}
@@ -48,7 +48,7 @@ export default function LaunchPage() {
           </div>
           <div className="parallax-layer grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5" data-parallax="18">
             {filtered.map(pkg => (
-              <article key={pkg.id} className="bg-white border border-rule rounded-xl p-5 sm:p-6 flex flex-col hover:border-ink hover:shadow-[0_8px_32px_rgba(14,13,9,0.07)] transition-all relative">
+              <article key={pkg.id} className="info-card surface-card-hover flex flex-col relative">
                 {pkg.popular && <span className="absolute top-4 right-4 text-[10px] font-bold uppercase tracking-[0.08em] px-2.5 py-1 rounded-full bg-blue-lt text-blue border border-[rgba(20,0,255,0.12)]">Popular</span>}
                 <div className="text-[24px] mb-3">{pkg.icon}</div>
                 <div className="text-[10px] font-bold uppercase tracking-[0.1em] text-muted mb-2">{pkg.category}</div>
@@ -80,7 +80,7 @@ export default function LaunchPage() {
               { q: 'What payment methods do you accept?', a: 'We accept card payments via Stripe (UK, EU, US) and Razorpay (India). Payment is required upfront before work begins.' },
               { q: 'Can I upgrade my package later?', a: 'Absolutely. Many clients start with a Starter Site and upgrade to a Business Site or add an AI chatbot once they see initial results.' },
             ].map(faq => (
-              <div key={faq.q} className="bg-white border border-rule rounded-xl p-5">
+              <div key={faq.q} className="info-card-compact">
                 <h3 className="font-bold text-[14px] sm:text-[15px] mb-2">{faq.q}</h3>
                 <p className="text-[13px] sm:text-[14px] text-muted leading-relaxed">{faq.a}</p>
               </div>

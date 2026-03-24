@@ -43,7 +43,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
 
       {/* Hero banner */}
       <div className="pt-[64px]">
-        <div className="min-h-[260px] sm:min-h-[320px] flex items-end px-4 sm:px-6 lg:px-10 xl:px-12 pb-10 sm:pb-14 relative overflow-hidden" style={{ background: cs.bg }}>
+        <div className="min-h-[260px] sm:min-h-[320px] flex items-end px-4 sm:px-6 lg:px-10 xl:px-12 pb-10 sm:pb-14 relative overflow-hidden border-b border-rule" style={{ background: cs.bg }}>
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none"><div className="text-[160px] sm:text-[220px] opacity-[0.08]">{cs.glyph}</div></div>
           <div className="page-wrap w-full relative z-10">
             <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Work', href: '/work' }, { name: cs.client, href: `/work/${cs.slug}` }]} className="mb-4" />
@@ -72,7 +72,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
               <h3 className="text-[11px] font-bold uppercase tracking-[0.12em] text-muted mb-4">Results</h3>
               <div className="space-y-2.5">
                 {cs.results.map((r, i) => (
-                  <div key={i} className="flex items-start gap-3 text-[13px] sm:text-[14px] text-ink bg-white border border-rule rounded-xl px-4 py-3">
+                  <div key={i} className="flex items-start gap-3 text-[13px] sm:text-[14px] text-ink bg-white border border-rule rounded-[24px] px-4 py-3.5 shadow-[0_10px_28px_rgba(17,17,17,0.04)]">
                     <span className="font-extrabold text-[10px] flex-shrink-0 mt-0.5 w-4 h-4 rounded flex items-center justify-center text-white" style={{ background: cs.color }}>✓</span>{r}
                   </div>
                 ))}
@@ -86,7 +86,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
                 </div>
               </div>
             )}
-            <blockquote className="bg-cream border-l-4 rounded-r-xl p-5 sm:p-6 mb-8 sm:mb-10" style={{ borderLeftColor: cs.color }}>
+            <blockquote className="section-panel border-l-4 rounded-r-[30px] p-5 sm:p-6 mb-8 sm:mb-10 shadow-none" style={{ borderLeftColor: cs.color }}>
               <p className="serif-italic text-[15px] sm:text-[17px] text-ink-2 leading-[1.7] mb-3">&ldquo;{cs.quote}&rdquo;</p>
               <cite className="text-[12px] sm:text-[13px] font-bold text-muted not-italic">{cs.quoteBy}</cite>
             </blockquote>
@@ -98,24 +98,24 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
 
           {/* Sidebar */}
           <aside className="space-y-4">
-            <div className="bg-white border border-rule rounded-xl p-5">
+            <div className="section-panel p-5 shadow-none">
               <h3 className="text-[10px] font-bold uppercase tracking-[0.1em] text-muted mb-4">Project metrics</h3>
               <div className="grid grid-cols-2 gap-2">
                 {cs.metrics.map(m => (
-                  <div key={m.label} className="bg-cream rounded-lg p-3">
+                  <div key={m.label} className="bg-white rounded-[20px] p-3 border border-rule">
                     <div className="font-extrabold text-[18px] sm:text-[20px] serif-italic" style={{ color: cs.color }}>{m.value}</div>
                     <div className="text-[10px] sm:text-[11px] text-muted mt-0.5">{m.label}</div>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="bg-white border border-rule rounded-xl p-5">
+            <div className="section-panel p-5 shadow-none">
               <h3 className="text-[10px] font-bold uppercase tracking-[0.1em] text-muted mb-3">Project details</h3>
               {cs.investment && <div className="flex justify-between py-2 border-b border-rule text-[13px]"><span className="text-muted">Investment</span><span className="font-bold">{cs.investment}</span></div>}
               {cs.deliveryTime && <div className="flex justify-between py-2 border-b border-rule text-[13px]"><span className="text-muted">Timeline</span><span className="font-bold">{cs.deliveryTime}</span></div>}
               <div className="flex justify-between py-2 items-center text-[13px]"><span className="text-muted">Service</span><span className={`font-bold text-[11px] px-2.5 py-1 rounded-full ${cs.serviceType === 'launch' ? 'bg-blue-lt text-blue' : cs.serviceType === 'grow' ? 'bg-sage-lt text-sage' : 'bg-warm-lt text-warm'}`}>{cs.serviceType.toUpperCase()}</span></div>
             </div>
-            <div className="bg-ink rounded-xl p-5">
+            <div className="bg-ink rounded-[30px] p-5 shadow-[0_18px_48px_rgba(17,17,17,0.12)]">
               <div className="text-[13px] font-bold text-white mb-1.5">Want similar results?</div>
               <p className="text-[12px] text-[rgba(255,255,255,0.5)] mb-4 leading-relaxed">Book a free 30-min call — no commitment, just honest advice.</p>
               <Link href="/contact" className="block w-full text-center py-2.5 bg-cream text-ink rounded-lg font-bold text-[13px] no-underline hover:bg-white transition-colors">Book a Free Call →</Link>
@@ -131,7 +131,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {caseStudies.filter(c => c.slug !== cs.slug).slice(0, 3).map(c => (
               <Link key={c.slug} href={`/work/${c.slug}`} className="no-underline group">
-                <div className="border border-rule rounded-xl overflow-hidden group-hover:border-ink transition-all">
+                <div className="surface-card overflow-hidden group-hover:border-ink transition-all">
                   <div className="h-[140px] sm:h-[160px] flex items-center justify-center" style={{ background: c.bg }}><div className="text-[52px] opacity-20">{c.glyph}</div></div>
                   <div className="p-4 sm:p-5">
                     <div className="font-bold text-[14px] mb-1 text-ink">{c.client}</div>

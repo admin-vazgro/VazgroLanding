@@ -96,6 +96,51 @@ video {
   .section-pad {
     @apply py-16 sm:py-20 md:py-24 lg:py-28;
   }
+  .page-hero {
+    @apply bg-white border-b border-rule pt-[88px] sm:pt-[104px] pb-14 sm:pb-16 lg:pb-20;
+  }
+  .page-hero-center {
+    @apply text-center;
+  }
+  .page-hero-copy {
+    @apply max-w-[760px];
+  }
+  .page-hero-copy-center {
+    @apply max-w-[760px] mx-auto;
+  }
+  .section-intro {
+    @apply mb-10 sm:mb-12 lg:mb-14;
+  }
+  .section-intro-grid {
+    @apply grid lg:grid-cols-[minmax(0,1fr)_minmax(320px,430px)] gap-6 sm:gap-8 lg:gap-16 items-start;
+  }
+  .metric-strip {
+    @apply border-b border-rule bg-cream-2 py-5 sm:py-6;
+  }
+  .metric-strip-grid {
+    @apply flex flex-wrap items-center justify-center gap-8 sm:gap-12 lg:gap-16 text-center;
+  }
+  .section-panel {
+    @apply bg-cream border border-rule rounded-[32px] shadow-[0_18px_56px_rgba(17,17,17,0.04)];
+  }
+  .surface-card {
+    @apply bg-[#FCFCFA] border border-rule rounded-[30px] shadow-[0_12px_36px_rgba(17,17,17,0.035)];
+  }
+  .surface-card-hover {
+    @apply hover:border-[#D9D9D3] hover:shadow-[0_20px_52px_rgba(17,17,17,0.06)] transition-all duration-300;
+  }
+  .info-card {
+    @apply surface-card px-6 py-6 sm:px-7 sm:py-7;
+  }
+  .info-card-compact {
+    @apply surface-card px-5 py-5 sm:px-6 sm:py-6;
+  }
+  .legal-shell {
+    @apply pt-[88px] sm:pt-[104px] pb-16 sm:pb-24 bg-white;
+  }
+  .legal-card {
+    @apply section-panel px-6 py-8 sm:px-8 sm:py-10 lg:px-10 lg:py-12;
+  }
 
   /* ─── Buttons — Figma style ─── */
   .btn {

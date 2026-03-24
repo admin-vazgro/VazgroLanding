@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 export default function PricingPage() {
   return (
     <>
-      <div className="bg-white border-b border-rule pt-[84px] sm:pt-[100px] pb-10 sm:pb-12 text-center">
-        <div className="page-wrap parallax-layer" data-parallax="12">
+      <div className="page-hero page-hero-center">
+        <div className="page-wrap page-hero-copy-center parallax-layer" data-parallax="12">
           <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Pricing', href: '/pricing' }]} className="mb-5 justify-center" />
           <span className="eyebrow">Transparent pricing</span>
           <h1 className="type-h1 text-[30px] sm:text-[46px] lg:text-[58px] mb-3">No surprises. <span className="serif-italic">Ever.</span></h1>
@@ -32,14 +32,14 @@ export default function PricingPage() {
           {/* Mobile cards */}
           <div className="parallax-layer sm:hidden space-y-3 mb-14" data-parallax="14">
             {packages.map(p => (
-              <div key={p.id} className="bg-white border border-rule rounded-xl p-4 flex items-center justify-between">
+              <div key={p.id} className="info-card-compact flex items-center justify-between">
                 <div><div className="font-bold text-[14px]">{p.icon} {p.name}</div><div className="text-[12px] text-muted">⏱ {p.deliveryDays} days</div></div>
                 <div className="text-right"><div className="font-extrabold text-[17px] serif-italic">£{p.price.toLocaleString()}</div><Link href="/services/launch" className="text-[11px] font-bold text-blue no-underline">Start →</Link></div>
               </div>
             ))}
           </div>
           {/* Desktop table */}
-          <div className="parallax-layer hidden sm:block border border-rule rounded-xl overflow-hidden bg-white mb-14" data-parallax="14">
+          <div className="parallax-layer hidden sm:block section-panel overflow-hidden mb-14" data-parallax="14">
             <div className="grid px-5 sm:px-6 py-3 border-b border-rule bg-cream-2" style={{ gridTemplateColumns: '2.5fr 1fr 1fr 110px' }}>
               {['Package', 'Price', 'Delivery', ''].map(h => <span key={h} className="text-[10px] font-bold uppercase tracking-[0.08em] text-muted">{h}</span>)}
             </div>
@@ -63,13 +63,13 @@ export default function PricingPage() {
               <div className="text-[11px] font-bold uppercase tracking-[0.1em] text-muted mb-3 pb-2 border-b border-rule">{track} Track</div>
               <div className="sm:hidden space-y-3">
                 {growPlans.filter(p => p.track === track).map(p => (
-                  <div key={p.id} className="bg-white border border-rule rounded-xl p-4 flex items-center justify-between">
+                  <div key={p.id} className="info-card-compact flex items-center justify-between">
                     <div><div className="font-bold text-[14px]">{p.name}{p.popular && <span className="ml-2 text-[10px] bg-blue-lt text-blue px-2 py-0.5 rounded-full font-bold">Popular</span>}</div><div className="text-[11px] text-muted mt-0.5">{p.capacity}</div></div>
                     <div className="text-right"><div className="font-extrabold text-[17px] serif-italic">£{p.price.toLocaleString()}<span className="text-[12px] font-sans font-normal text-muted">/mo</span></div><Link href="/services/grow" className="text-[11px] font-bold text-blue no-underline">Enquire →</Link></div>
                   </div>
                 ))}
               </div>
-              <div className="hidden sm:block border border-rule rounded-xl overflow-hidden bg-white">
+              <div className="hidden sm:block section-panel overflow-hidden">
                 {growPlans.filter(p => p.track === track).map((p, i) => (
                   <div key={p.id} className={`grid px-5 sm:px-6 py-4 border-b last:border-b-0 border-rule items-center hover:bg-cream transition-colors ${i % 2 === 1 ? 'bg-[rgba(246,244,238,0.4)]' : ''}`} style={{ gridTemplateColumns: '1.5fr 1fr 2fr 120px' }}>
                     <div className="font-bold text-[14px]">{p.name}{p.popular && <span className="ml-2 text-[10px] font-bold uppercase tracking-[0.08em] bg-blue-lt text-blue px-2 py-0.5 rounded-full">Popular</span>}</div>
@@ -82,7 +82,7 @@ export default function PricingPage() {
             </div>
           ))}
 
-          <div className="parallax-layer mt-12 bg-white border border-rule rounded-xl p-8 sm:p-10 text-center max-w-[540px] mx-auto" data-parallax="16">
+          <div className="parallax-layer mt-12 section-panel p-8 sm:p-10 text-center max-w-[580px] mx-auto" data-parallax="16">
             <div className="text-[32px] mb-4">🔧</div>
             <h3 className="text-[18px] sm:text-[20px] font-bold tracking-[-0.02em] mb-2">BUILD — Custom scoping</h3>
             <p className="text-[13px] sm:text-[14px] text-muted leading-relaxed mb-6">MVPs, AI products, sprint retainers, and co-founder partnerships. Book a free call and receive a detailed proposal within 48 hours.</p>
