@@ -218,27 +218,27 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="parallax-layer border-t border-[#ECE8E1]" data-parallax="16">
+          <div className="parallax-layer space-y-4 lg:space-y-0 lg:border-t lg:border-[#ECE8E1]" data-parallax="16">
             {serviceModels.map((model, index) => (
               <Link
                 key={model.name}
                 href={model.href}
-                className="group grid gap-4 border-b border-[#ECE8E1] py-8 no-underline transition-all duration-300 hover:rounded-[28px] hover:border-[#EEE7E1] hover:bg-[#FCF7F7] hover:px-5 hover:shadow-[0_16px_40px_rgba(17,17,17,0.04)] focus-visible:rounded-[28px] focus-visible:border-[#EEE7E1] focus-visible:bg-[#FCF7F7] focus-visible:px-5 focus-visible:shadow-[0_16px_40px_rgba(17,17,17,0.04)] sm:px-3 sm:py-10 lg:grid-cols-[116px_minmax(0,1fr)] lg:gap-10 lg:px-4 lg:hover:py-10 lg:focus-visible:py-10"
+                className="group grid gap-4 rounded-[24px] border border-[#EEE7E1] bg-[#FCF7F7] px-5 py-6 no-underline shadow-[0_14px_34px_rgba(17,17,17,0.035)] transition-all duration-300 sm:px-6 sm:py-7 lg:grid-cols-[116px_minmax(0,1fr)] lg:gap-10 lg:rounded-none lg:border-b lg:border-x-0 lg:border-t-0 lg:border-[#ECE8E1] lg:bg-transparent lg:px-4 lg:py-8 lg:shadow-none lg:hover:rounded-[28px] lg:hover:border lg:hover:border-[#EEE7E1] lg:hover:bg-[#FCF7F7] lg:hover:px-5 lg:hover:shadow-[0_16px_40px_rgba(17,17,17,0.04)] lg:focus-visible:rounded-[28px] lg:focus-visible:border lg:focus-visible:border-[#EEE7E1] lg:focus-visible:bg-[#FCF7F7] lg:focus-visible:px-5 lg:focus-visible:shadow-[0_16px_40px_rgba(17,17,17,0.04)] lg:hover:py-10 lg:focus-visible:py-10"
               >
-                <div className="text-[38px] font-light leading-none tracking-[-0.05em] text-[#948E87] transition-colors duration-300 group-hover:text-[#847D76] group-focus-visible:text-[#847D76] lg:pt-1">
+                <div className="text-[30px] font-light leading-none tracking-[-0.05em] text-[#948E87] transition-colors duration-300 group-hover:text-[#847D76] group-focus-visible:text-[#847D76] sm:text-[34px] lg:pt-1 lg:text-[38px]">
                   {String(index + 1).padStart(2, '0')}
                 </div>
                 <div className="max-w-[760px]">
-                  <h3 className="text-[34px] font-medium leading-[1.05] tracking-[-0.04em] text-[#1E1E1E] sm:text-[40px] lg:text-[44px]">
+                  <h3 className="text-[28px] font-medium leading-[1.05] tracking-[-0.04em] text-[#1E1E1E] sm:text-[32px] lg:text-[44px]">
                     {model.name}
                   </h3>
-                  <div className="mt-3 text-[22px] font-medium leading-[1.2] tracking-[-0.03em] text-[#2A2A2A] sm:text-[24px]">
+                  <div className="mt-3 text-[18px] font-medium leading-[1.2] tracking-[-0.03em] text-[#2A2A2A] sm:text-[20px] lg:text-[24px]">
                     {model.summary}
                   </div>
                   <p className="mt-3 max-w-[640px] text-[14px] leading-[1.7] tracking-[-0.01em] text-[rgba(95,95,95,0.82)] sm:text-[15px]">
                     {model.text}
                   </p>
-                  <div className="grid max-h-[220px] overflow-hidden opacity-100 transition-all duration-300 ease-out lg:max-h-0 lg:opacity-0 lg:group-hover:mt-6 lg:group-hover:max-h-[260px] lg:group-hover:opacity-100 lg:group-focus-visible:mt-6 lg:group-focus-visible:max-h-[260px] lg:group-focus-visible:opacity-100">
+                  <div className="mt-5 grid overflow-visible opacity-100 transition-all duration-300 ease-out lg:mt-0 lg:max-h-0 lg:overflow-hidden lg:opacity-0 lg:group-hover:mt-6 lg:group-hover:max-h-[260px] lg:group-hover:opacity-100 lg:group-focus-visible:mt-6 lg:group-focus-visible:max-h-[260px] lg:group-focus-visible:opacity-100">
                     <ul className="space-y-2 text-[15px] leading-[1.55] tracking-[-0.01em] text-[#7A746C]">
                       {model.details.map((detail) => (
                         <li key={detail} className="flex items-start gap-2">
@@ -247,7 +247,7 @@ export default function HomePage() {
                         </li>
                       ))}
                     </ul>
-                    <span className="mt-6 inline-flex h-[40px] w-fit items-center rounded-full border border-[#2A2A2A] px-6 text-[14px] font-medium leading-none text-[#2A2A2A] transition-colors duration-200 group-hover:bg-white group-focus-visible:bg-white">
+                    <span className="mt-5 inline-flex h-[40px] w-fit items-center rounded-full border border-[#2A2A2A] bg-white px-6 text-[14px] font-medium leading-none text-[#2A2A2A] transition-colors duration-200 lg:mt-6 lg:bg-transparent group-hover:bg-white group-focus-visible:bg-white">
                       Explore
                     </span>
                   </div>
